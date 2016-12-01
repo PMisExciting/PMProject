@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Register Page</title>
+</head>
+<body>
+<div class="login-container">
+    <form class="form-horizontal" name="myForm">
+        <div class="login-title">
+            <label class="control-label">欢迎注册!</label>
+        </div>
+        <div class="controls">
+            <input type="text" id="inputUserName" placeholder="  用户名" name="username" ng-model="username" required>
+        </div>
+        <div class="controls">
+            <input type="password" id="inputPassword" placeholder="  密码" name="password" ng-model="password" required>
+        </div>
+        <div class="controls">
+            <input type="password" id="repeatPassword" placeholder="  重复密码" name="repeat" ng-model="repeat" required>
+        </div>
+
+        <div class="error-show" style="color:red" ng-show="myForm.$dirty">
+            <span ng-show="myForm.username.$error.required && myForm.username.$dirty">请输入用户名</span>
+            <span ng-show="myForm.password.$error.required && !myForm.username.$error.required && myForm.password.$dirty">请输入密码</span>
+            <span ng-show="myForm.repeat.$error.required &&!myForm.password.$error.required &&!myForm.username.$error.required && myForm.repeat.$dirty">请输入重复密码</span>
+            <span ng-show="password!=repeat &&!myForm.repeat.$error.required &&!myForm.password.$error.required &&!myForm.username.$error.required">密码不一致</span>
+        </div>
+
+        <div class="controls">
+            <button type="button" ng-disabled="myForm.username.$error.required||myForm.password.$error.required||myForm.repeat.$error.required||password!=repeat" ng-click="userRegister()">注册</button>
+        </div>
+        <div class="controls transform">
+            <a href="#login">>>登陆</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
