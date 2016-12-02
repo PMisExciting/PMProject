@@ -22,6 +22,9 @@
                 <span ng-show="myForm.password.$error.required && !myForm.username.$error.required && myForm.password.$dirty">请输入密码</span>
             </div>
 
+            <div class="error-show" style="color: red">
+                <span id="login-error"></span>
+            </div>
 
             <div class="controls">
                 <button type="button" ng-disabled="myForm.username.$invalid || myForm.password.$invalid" ng-click="userLogin()">登陆</button>

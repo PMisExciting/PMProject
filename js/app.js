@@ -9,18 +9,21 @@ myApp.config(['$stateProvider', '$urlRouterProvider', function ( $stateProvider,
         //主页
         .state('home', {
             url:'/home',
+            cache:'false',
             templateUrl: 'templates/home.html',
             controller: 'homeCtrl'
         })
         //领养
         .state('adopt',{
             url: '/adopt',
+            cache:'false',
             templateUrl: 'templates/adopt.html',
             controller: 'adoptCtrl'
         })
         //寻宠启事
         .state('lost',{
             url: '/lost',
+            cache:'false',
             templateUrl: 'templates/lost.html',
             controller: 'lostCtrl'
         })
@@ -28,6 +31,7 @@ myApp.config(['$stateProvider', '$urlRouterProvider', function ( $stateProvider,
         //论坛
         .state('forum', {
             url: '/forum',
+            cache:'false',
             templateUrl: 'templates/forum.html',
             controller: 'forumCtrl'
         })
