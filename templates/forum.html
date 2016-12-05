@@ -7,24 +7,30 @@
 <body>
     <div class="left">
         <div><img class="top-pic" src="img/forum-top.jpg"></div>
-        <div class="forum" ng-repeat="forum in forums">
+        <div class="forum" ng-repeat="forum in forumsPart">
             <a class="forum-title" href="#forum/{{forum.forumId}}">{{forum.forumTitle}}</a>
-            <p class="forum-content">-{{forum.forumContent}}</p>
-            <div class="forum-info"><p>{{forum.userName}} | {{forum.forumTime}} | 回复({{forum.commentNum}})</p></div>
+            <p class="forum-content">  {{forum.forumContent}}</p>
+            <div class="forum-info"><p>{{forum.userName}} 发布于 {{forum.forumTime}} | 回复({{forum.commentNum}})</p></div>
         </div>
-        <button class="more-forum">更多</button>
+        <button class="more-forum" ng-click = "moreForums()" ng-disabled="forumsLength == forumsPart.length">更多</button>
     </div>
   <div class="right">
         <div class="right-up">
-            <h4 class="r-title">热帖排行</h4>
+            <div class="ru-title"><h4>热帖排行</h4></div>
+            <div class="null-error"></div>
             <ul class="title-list">
-                <li ng-repeat="forum in forums"><a class="right-title" href="#forum/{{forum.forumId}}">{{forum.forumTitle}}</a></li>
+                <li ng-repeat="forum in hotforums"><a class="right-title" href="#forum/{{forum.forumId}}">{{forum.forumTitle}}</a></li>
             </ul>
         </div>
         <div class="right-down">
-            <h4 class="r-title">我的帖子</h4>
+
+            <div class="r-title">
+                <div class="rd-title"><h4>我的帖子</h4></div>
+                <button ng-click="addForum()" class="new-forum" ng-show="user!=null">+ 发布新帖</button>
+            </div>
+            <div class="null-error"></div>
             <ul class="title-list">
-                <li ng-repeat="forum in forums"><a class="right-title" href="#forum/{{forum.forumId}}">{{forum.forumTitle}}</a></li>
+                <li ng-repeat="forum in myforums"><a class="right-title" href="#forum/{{forum.forumId}}">{{forum.forumTitle}}</a></li>
             </ul>
         </div>
   </div>

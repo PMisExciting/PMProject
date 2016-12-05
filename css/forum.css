@@ -63,6 +63,16 @@
 
 .r-title {
     color: #e67c7c;
+    min-height: 4em;
+}
+
+.rd-title {
+    width:100px;
+    float: left;
+}
+
+.ru-title {
+    color: #e67c7c;
 }
 
 .title-list {
@@ -76,6 +86,7 @@
 .right-up {
     border-bottom: double #e67c7c;
     margin-bottom: 20px;
+    min-height: 200px;
 }
 
 .more-forum {
@@ -83,4 +94,23 @@
     color: white;
     background-color: #e69d9b;
     border: none;
+}
+
+.null-error a{
+    color: red;
+    text-decoration: none;
+}
+
+.null-error a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.new-forum {
+    color: #e67c7c;
+    background-color: white;
+    border: none;
+    font-size: 1.1em;
+    float: right;
+    padding-top: 10px;
 }
