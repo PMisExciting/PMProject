@@ -5,6 +5,16 @@
     <title>Adopt Page</title>
 </head>
 <body>
-    <p>This is the adopt page</p>
+    <div class="card-group">
+        <div class="card col-xs-3" ng-repeat="adopt in adoptList">
+            <img class="card-img-top" src="{{adopt.animalPicture}}" alt="Card image cap">
+            <div class="card-block">
+                <h4 class="card-title">{{adopt.animalName}}</h4>
+                <p class="card-text">{{adopt.animalDescription}}</p>
+                <h6 class="card-subtitle text-muted">{{adopt.time}}</h6>
+                <h6 class="card-subtitle text-muted">{{adopt.userName}}</h6>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

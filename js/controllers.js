@@ -7,8 +7,49 @@ angular.module('myApp.controllers', [])
         $rootScope.hostUrl = 'localhost';
     })
 
-    .controller('adoptCtrl', function(){
-
+    .controller('adoptCtrl', function($rootScope, $scope, $http){
+        //
+        //$scope.records = [
+        //    {
+        //        "Name" : "Alfreds Futterkiste",
+        //        "Country" : "Germany"
+        //    },{
+        //        "Name" : "Berglunds snabbköp",
+        //        "Country" : "Sweden"
+        //    },{
+        //        "Name" : "Centro comercial Moctezuma",
+        //        "Country" : "Mexico"
+        //    },{
+        //        "Name" : "Ernst Handel",
+        //        "Country" : "Austria"
+        //    }, {
+        //        "Name" : "Alfreds Futterkiste",
+        //        "Country" : "Germany"
+        //    },{
+        //        "Name" : "Berglunds snabbköp",
+        //        "Country" : "Sweden"
+        //    },{
+        //        "Name" : "Centro comercial Moctezuma",
+        //        "Country" : "Mexico"
+        //    },{
+        //        "Name" : "Ernst Handel",
+        //        "Country" : "Austria"
+        //    }
+        //]
+        $http.get("http://" + $rootScope.hostUrl + ":8080/PMServer/GetAdoptAnimal")
+            .success(function (ret) {
+                if (ret != null && ret[0] != null) {
+                    //$rootScope.user = ret[0];
+                    //window.location.href = "#home";
+                    //console.log(ret);
+                    $scope.adoptList = ret;
+                } else {
+                    console.log("no animal");
+                }
+            })
+            .error(function () {
+                alert('登录失败，因网络原因无法登陆');
+            });
     })
 
     .controller('lostCtrl', function(){
