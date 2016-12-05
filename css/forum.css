@@ -1,0 +1,116 @@
+.left {
+    width: 600px;
+    float: left;
+}
+
+.right {
+    width: 330px;
+    float: right;
+}
+
+.left, .right {
+    padding: 10px 15px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.top-pic {
+    height: 80px;
+    padding-left: 80px;
+    margin-bottom: 10px;
+}
+
+.forum-title {
+    text-decoration: none;
+    font-size:1.1em;
+    color: #e67c7c;
+}
+
+.forum-title:hover {
+    color: #e67c7c;
+    text-decoration: underline;
+}
+
+.forum-content {
+    width: 580px;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    color: #4f4f4f;
+}
+
+.forum-info {
+    color: gray;
+    text-align: right;
+}
+
+.forum {
+    margin-bottom: 20px;
+    border-bottom: solid;
+    border-color: #d1c4c9;
+    border-width: thin;
+}
+
+.right-title {
+    text-decoration: none;
+    color: gray;
+}
+
+.right-title:hover {
+    color: #e67c7c;
+    text-decoration: underline;
+}
+
+.r-title {
+    color: #e67c7c;
+    min-height: 4em;
+}
+
+.rd-title {
+    width:100px;
+    float: left;
+}
+
+.ru-title {
+    color: #e67c7c;
+}
+
+.title-list {
+    list-style-type: circle;
+}
+
+.title-list li {
+    padding-bottom: 0.5em;
+}
+
+.right-up {
+    border-bottom: double #e67c7c;
+    margin-bottom: 20px;
+    min-height: 200px;
+}
+
+.more-forum {
+    width:570px;
+    color: white;
+    background-color: #e69d9b;
+    border: none;
+}
+
+.null-error a{
+    color: red;
+    text-decoration: none;
+}
+
+.null-error a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.new-forum {
+    color: #e67c7c;
+    background-color: white;
+    border: none;
+    font-size: 1.1em;
+    float: right;
+    padding-top: 10px;
+}

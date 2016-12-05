@@ -36,6 +36,13 @@ myApp.config(['$stateProvider', '$urlRouterProvider', function ( $stateProvider,
             controller: 'forumCtrl'
         })
 
+        .state('forum-detail', {
+            url: '/forum/:forumId',
+            cache:'false',
+            templateUrl: 'templates/forum-detail.html',
+            controller: 'forumDetailCtrl'
+        })
+
         //登陆
         .state('login', {
             url: '/login',
