@@ -15,7 +15,19 @@ angular.module('myApp.controllers', [])
 
     })
 
-    .controller('forumCtrl', function(){
+    .controller('forumCtrl', function($scope){
+        $scope.forums = [
+            {forumTitle:"论我为什么要起一个这样的标题名", forumContent:"测试内容1", forumTime:"2016-12-03 20:00:00", userName:"用户1", commentNum:"10", forumId:0},
+            {forumTitle:"因为它看起来肥肠好看啊哈哈哈哈哈", forumContent:"测试内容2", forumTime:"2016-12-03 20:00:00", userName:"用户2", commentNum:"100", forumId:1},
+            {forumTitle:"短小精悍", forumContent:"测试内容3", forumTime:"2016-12-03 20:00:00", userName:"用户3", commentNum:"0", forumId:2},
+            {forumTitle:"论我为什么要起一个这样的标题名", forumContent:"测试内容1", forumTime:"2016-12-03 20:00:00", userName:"用户1", commentNum:"10", forumId:0},
+            {forumTitle:"因为它看起来肥肠好看啊哈哈哈哈哈", forumContent:"测试内容2", forumTime:"2016-12-03 20:00:00", userName:"用户2", commentNum:"100", forumId:1},
+            {forumTitle:"短小精悍", forumContent:"测试内容3", forumTime:"2016-12-03 20:00:00", userName:"用户3", commentNum:"0", forumId:2},
+            {forumTitle:"短小精悍", forumContent:"测试内容3", forumTime:"2016-12-03 20:00:00", userName:"用户3", commentNum:"0", forumId:2}
+        ];
+    })
+
+    .controller('forumDetailCtrl', function(){
 
     })
 

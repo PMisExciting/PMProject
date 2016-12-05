@@ -5,6 +5,28 @@
     <title>Forum Page</title>
 </head>
 <body>
-    <p>This is the forum page</p>
+    <div class="left">
+        <div><img class="top-pic" src="img/forum-top.jpg"></div>
+        <div class="forum" ng-repeat="forum in forums">
+            <a class="forum-title" href="#forum/{{forum.forumId}}">{{forum.forumTitle}}</a>
+            <p class="forum-content">-{{forum.forumContent}}</p>
+            <div class="forum-info"><p>{{forum.userName}} | {{forum.forumTime}} | 回复({{forum.commentNum}})</p></div>
+        </div>
+        <button class="more-forum">更多</button>
+    </div>
+  <div class="right">
+        <div class="right-up">
+            <h4 class="r-title">热帖排行</h4>
+            <ul class="title-list">
+                <li ng-repeat="forum in forums"><a class="right-title" href="#forum/{{forum.forumId}}">{{forum.forumTitle}}</a></li>
+            </ul>
+        </div>
+        <div class="right-down">
+            <h4 class="r-title">我的帖子</h4>
+            <ul class="title-list">
+                <li ng-repeat="forum in forums"><a class="right-title" href="#forum/{{forum.forumId}}">{{forum.forumTitle}}</a></li>
+            </ul>
+        </div>
+  </div>
 </body>
 </html>
