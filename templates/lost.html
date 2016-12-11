@@ -5,6 +5,16 @@
     <title>Lost Page</title>
 </head>
 <body>
-    <p>This is the lost page</p>
+<div class="card-group">
+    <div class="card col-xs-3" ng-repeat="lost in lostList">
+        <img class="card-img-top" src="{{lost.animalPicture}}" alt="Card image cap">
+        <div class="card-block">
+            <h4 class="card-title">{{lost.animalName}}</h4>
+            <p class="card-text">{{lost.animalDescription}}</p>
+            <h6 class="card-subtitle text-muted">{{lost.time}}</h6>
+            <h6 class="card-subtitle text-muted">{{lost.userName}}</h6>
+        </div>
+    </div>
+</div>
 </body>
 </html>

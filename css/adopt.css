@@ -5,6 +5,40 @@
 }
 
 .card-img-top {
-    height: 180px;
-    width: 250px;
+    height: 150px;
+    width: 200px;
+}
+
+.button {
+    background: #e46565;
+    border: solid thin #e46565;
+    border-radius: 2px;
+    width:100px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    height: 30px;
+    color: white;
+}
+
+.button:hover{
+    background: white;
+    border-color: #e46565;
+    color: #e46565;
+}
+
+.button:disabled, .controls button:disabled:hover{
+    background: #e46565;
+    border-color: #e46565;
+    color: white;
+}
+
+.button:active{
+    background: white;
+    border-color: #e46565;
+    color: #e46565;
+}
+
+.save-adopt {
+    background: #e46565;
+    border: solid thin #e46565;
 }

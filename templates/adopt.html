@@ -7,12 +7,42 @@
 <body>
     <div class="card-group">
         <div class="card col-xs-3" ng-repeat="adopt in adoptList">
-            <img class="card-img-top" src="{{adopt.animalPicture}}" alt="Card image cap">
+            <img id="img-animal{{adopt.animalId}}" class="card-img-top img-responsive" src="{{realPath}}{{adopt.animalPicture}}" alt="Card image cap" ng-click="uploadIcon(adopt.animalId)" ng-disabled="userRole!=1">
+            <form methond="post" enctype="multipart/form-data" id="iconForm{{adopt.animalId}}" name="uploadForm">
+                <input style="display: none" name="animalId" value="{{adopt.animalId}}" />
+                <input style="display: none" name="picture" id="picture{{adopt.animalId}}" type="file" />
+            </form>
+
             <div class="card-block">
-                <h4 class="card-title">{{adopt.animalName}}</h4>
-                <p class="card-text">{{adopt.animalDescription}}</p>
-                <h6 class="card-subtitle text-muted">{{adopt.time}}</h6>
+                <h4 id="card-animalName{{adopt.animalId}}" class="card-title">{{adopt.animalName}}</h4>
+                <p id="card-animalDescription{{adopt.animalId}}" class="card-text">{{adopt.animalDescription}}</p>
+                <h6 id="card-animalTime{{adopt.animalId}}" class="card-subtitle text-muted">{{adopt.time}}</h6>
                 <h6 class="card-subtitle text-muted">{{adopt.userName}}</h6>
+                <button class="button button-positive" id="modify-button" ng-show="!isAdminist" ng-click="editInfo(adopt)" >修改资料</button>
+
+                <button class="button button-positive" id="us-button" ng-show="!isAdminist" ng-click="deleteAdopt(adopt)">删除</button>
+
+                <div class="modal fade" id="myModal{{adopt.animalId}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">资料修改</h4>
+                            </div>
+                            <div class="modal-body">
+                                动物名字: <input type="text" name="animalName" id="animalName{{adopt.animalId}}"/><br>
+                                发布时间: <input type="text" name="animalTime" id="animalTime{{adopt.animalId}}"/><br>
+                                动物描述: <input type="text" name="animalDescription" id="animalDescription{{adopt.animalId}}"/>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary save-adopt" ng-click="updateMaterial(adopt)" data-dismiss="modal">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
