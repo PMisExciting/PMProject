@@ -43,6 +43,13 @@ myApp.config(['$stateProvider', '$urlRouterProvider', function ( $stateProvider,
             controller: 'forumDetailCtrl'
         })
 
+        .state('new-forum', {
+            url: '/new-forum',
+            cache:'false',
+            templateUrl: 'templates/new-forum.html',
+            controller: 'newForumCtrl'
+        })
+
         //登陆
         .state('login', {
             url: '/login',

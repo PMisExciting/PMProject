@@ -5,6 +5,31 @@
     <title>Detail Page</title>
 </head>
 <body>
-    <p>This is the detail page</p>
+    <div class="forum-detail">
+        <a href="#forum" class="back"> << 返回</a>
+        <div class="forum-head">
+            <h4>{{forum.forumTitle}}</h4>
+            <div class="forum-head-info"><p>{{forum.userName}} 发布于 {{forum.forumTime}} | 回复({{forum.commentNum}})</p></div>
+            <button ng-show="((user!=null) && (user.userName==forum.userName)) || ((user!=null)&&(user.userRole==1))" ng-click="deleteForum()">删除本帖</button>
+        </div>
+        <div class="forum-body" ng-bind-html="forumContent">
+        </div>
+        <div class="comments">
+            <div class="null-error"></div>
+            <div class="comment" ng-repeat="comment in comments">
+                <p class="comment-name">{{comment.userName}}:</p>
+                <div class="comment-content"><div class="triangle"></div><p>{{comment.commentContent}}</p></div>
+                <button ng-show="((user!=null) && (user.userName==forum.userName)) || ((user!=null)&&(user.userRole==1))" ng-click="deleteComment(comment.commentId)">删除</button><p class="forum-info">{{comment.commentTime}}</p>
+            </div>
+        </div>
+        <div ng-if="user != null" class="add-comment">
+            <h4>发表回复</h4>
+            <textarea type="text" name="myComment" id="myComment"></textarea><br>
+            <button class="comment-button" ng-click="addComment()">提交</button>
+        </div>
+    </div>
+
 </body>
 </html>
+
+<!--ng-show="(user!=null) && (user.userId==forum.userId)"-->

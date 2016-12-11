@@ -106,11 +106,11 @@
     text-decoration: underline;
 }
 
-.new-forum {
+.new-forum, .new-forum:hover {
     color: #e67c7c;
-    background-color: white;
-    border: none;
     font-size: 1.1em;
     float: right;
     padding-top: 10px;
 }
+
+
