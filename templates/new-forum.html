@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Forum Page</title>
+</head>
+<body>
+<div class="new-forum-body">
+    <a href="#forum" class="back"> << 返回</a>
+    <div>
+        <p class="new-forum-head">标题名:</p>
+        <input type="text" id="inputTitle">
+        <p class="new-forum-head">帖子内容:</p>
+        <textarea type="text" id="inputContent"></textarea><br>
+
+        <div class="forum-buttons">
+            <button id="confirm-new" ng-click="addNewForum()">发布</button>
+            <button id="cancel-new" ng-click="cancelNewForum()">取消</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

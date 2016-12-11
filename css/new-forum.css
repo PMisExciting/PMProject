@@ -1,0 +1,42 @@
+.new-forum-body {
+    width: 700px;
+    margin: 60px auto;
+}
+
+.new-forum-head {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#inputContent, #inputTitle{
+    border: solid #e46565 thin;
+    width:570px;
+    resize: none;
+    margin-bottom:20px;
+}
+
+#inputContent {
+    min-height: 400px;
+}
+
+.forum-buttons {
+    width:570px;
+}
+
+#cancel-new, #confirm-new{
+    float: right;
+    width: 70px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+#confirm-new {
+    background-color: #e46565;
+}
+
+#cancel-new {
+    background-color: #8ad2e4;
+}
+
